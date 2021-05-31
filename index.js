@@ -6,7 +6,7 @@ const lienarSearh = (arr, num) => {
 
     arr.forEach(number => {
         if(number == num) {
-            printOut=`Number: ${number} was found. `
+            reutrn `Number: ${number} was found. `
         } 
     });
     if(printOut == "") {
@@ -24,25 +24,21 @@ console.log(lienarSearh(arr, 7))
 
 
 const binarySearch = (arr, num) => {
-    let printOut = "";
 
-    let half = Math.ceil(arr.length / 2)
-    arr1 = arr.slice(0, half);
-    arr2 = arr.slice(-half)
+    let middle = Math.abs(arr.length / 2)
+    let firstHalf = arr.slice(0, middle);
+    let secoundHalf = arr.slice(-middle)
 
-    for(i = 0; i < arr1.length; i++) {
-      if(arr1[i] == num)  {
+    for(i = 0; i < firstHalf.length; i++) {
+      if(firstHalf[i] == num)  {
           return `Number: ${num} was found.`
       }
     }
-    for(j = 0; j < arr2.length; j++) {
-        if(arr2[j] == num)  {
+    for(j = 0; j < secoundHalf.length; j++) {
+        if(secoundHalf[j] == num)  {
             return `Number: ${num} was found.`
         }
     }
-    
-   
-
 
     return "Number not found in Binary Search"
 }
@@ -51,3 +47,4 @@ const binarySearch = (arr, num) => {
 console.log(binarySearch(arr, 7))
 console.log(binarySearch(arr, 14))
 console.log(binarySearch(arr, 66))
+
